@@ -25,6 +25,10 @@
   --text-display--line-height: 0.92;
   --text-display--letter-spacing: -0.035em;
 
+  --text-hero: clamp(3rem, 7.5vw, 6.5rem);
+  --text-hero--line-height: 0.95;
+  --text-hero--letter-spacing: -0.03em;
+
   --text-heading: clamp(2.25rem, 6vw, 4.5rem);
   --text-heading--line-height: 1;
   --text-heading--letter-spacing: -0.025em;
@@ -53,6 +57,16 @@
 
   /* Motion */
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-loader: loader 1.2s ease-in-out infinite;
+
+  @keyframes loader {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(200%);
+    }
+  }
 }
 
 @layer base {

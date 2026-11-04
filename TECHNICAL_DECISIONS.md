@@ -34,7 +34,33 @@
 `Container`, `Section`, `SectionHeading`, `Button` (primary/secondary/ghost, md/lg, otomatis `<a>` jika ada `href`), `Card` (base/raised/outline), `Badge` (neutral/strong/solid, opsi `dot`), `TextLink`.
 
 ### Pratinjau
-`src/dev/DesignPreview.jsx` hanya untuk pengembangan, dihapus di Fase 03.
+Halaman pratinjau Fase 02 sudah dihapus di Fase 03.
+
+## Fase 03 — Main Website
+
+- Token baru `text-hero` (judul tagline di Hero) dan `animate-loader` (loading screen). Token Fase 02 tidak diubah.
+- Struktur: `components/layout` (LoadingScreen, Navbar, Footer), `components/sections` (7 section + ContactForm), `components/projects` (ProjectCard), `components/animations` (RotatingText), `data/` (skills, projects, experience, journal), `hooks/` (useAppReady, useScrolled, useActiveSection).
+- Loading screen: selesai saat halaman + font siap, maksimal 3 detik. Tanpa delay buatan. Mengikuti reduced-motion.
+- Navbar: transparan lalu solid saat scroll, penanda section aktif (IntersectionObserver), menu mobile dengan `aria-expanded`, tutup lewat Escape.
+- Gambar (foto profil dan screenshot proyek) memakai `FallbackImage`: jika file belum ada, tampil placeholder berlabel, bukan gambar palsu.
+- Proyek: SonicFlows (featured), SIMMAS (secondary), tiga lainnya (compact). Data di `src/data/projects.js`. Status Financial Management System dan teknologi MySQL belum ditampilkan sampai dikonfirmasi.
+- Formulir kontak: validasi, loading/sukses/error, kolom jebakan spam. Aktif hanya jika `VITE_FORMSPREE_ENDPOINT` diisi; kalau belum, formulir menampilkan pemberitahuan dan tombol dinonaktifkan.
+- Email dan WhatsApp diisi di `src/lib/site.js` (nilai `null` akan tampil "To be added").
+- Revisi 1: foto profil (PNG tanpa latar) dipotong rasio 4:5 dan ditempel di warna `bg-2`, disimpan sebagai `public/images/profile.jpg`. Screenshot diperkecil ke lebar 1600px. Kartu proyek diubah: screenshot selalu di atas (rasio 2:1), grid 6 kolom (SonicFlows 6, SIMMAS 4, FitCal 2, GreenVibe 3, Finance 3) supaya screenshot tidak terpotong.
+- Teks About dan Journal adalah draf berdasarkan fakta yang sudah dikonfirmasi; pemilik boleh mengubahnya.
+- Animasi masuk (hero, scroll reveal, hover proyek) sengaja ditunda ke Fase 04.
+
+## Fase 04 — Animation and Interaction
+
+- Prinsip: gerak kecil, pendek, dan bertujuan. Semua animasi mengikuti `prefers-reduced-motion` (tanpa gerak; loading screen hanya fade).
+- `Reveal` (components/animations): muncul sekali saat masuk layar (opacity + naik 20px). Dipakai di judul section, About, Skills, Projects, Experience, Journal, Contact. Jeda antar-kartu dibuat bertahap tipis.
+- Hero: urutan masuk teks (naik satu per satu) lalu foto (fade + scale), dimulai setelah loading screen selesai (prop `ready`).
+- Loading screen: keluar seperti tirai terangkat ke atas (0.8 detik). Scroll dikunci selama loading.
+- Navbar: garis penanda section aktif bergeser halus antar menu (`layoutId`).
+- Hover: gambar proyek zoom halus + border kartu menyala; badge skill menyala; tombol sudah punya efek hover/tekan dari Fase 02.
+- BackToTop melayang muncul setelah scroll 700px; footer tetap punya tombol Back to top.
+- Smooth scrolling lewat CSS `scroll-behavior` (dimatikan untuk reduced-motion).
+- Tidak ada library animasi tambahan, tanpa custom cursor, parallax, atau partikel.
 
 ## Koreksi
 Percobaan awal memakai Next.js + TypeScript karena prompt terpotong. Dibatalkan; Fase 01 diulang dengan React + Vite.
