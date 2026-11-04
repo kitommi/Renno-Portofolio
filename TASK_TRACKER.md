@@ -1,0 +1,15 @@
+# Task Tracker
+
+| Fase | Nama | Prioritas | Status |
+|---|---|---|---|
+| 01 | Project Initialization | P0 | Menunggu verifikasi |
+| 02 | Design System | P0 | Belum dimulai |
+| 03 | Main Website | P0 | Belum dimulai |
+| 04 | Animation and Interaction | P1 | Belum dimulai |
+| 05 | Integration | P0 | Belum dimulai |
+| 06 | Quality Assurance | P0 | Belum dimulai |
+| 07 | Deployment | P0 | Belum dimulai |
+| 08 | Final Verification | P0 | Belum dimulai |
+
+## Isu terbuka
+- Aset dan data dari pemilik belum lengkap (lihat PROJECT_CONTEXT.md)
