@@ -3,20 +3,22 @@
 **Terakhir diperbarui:** 4 November 2026
 
 ## Fase saat ini
-Fase 01 — Project Initialization (menunggu verifikasi dari pemilik)
+Fase 02 — Design System (menunggu verifikasi dari pemilik)
 
 ## Tugas terakhir selesai
-File pondasi React + Vite + Tailwind + Framer Motion + Lucide sudah dibuat dan dikirim dalam bentuk zip.
+- Fase 01: pondasi React + Vite + Tailwind + Framer Motion + Lucide (pemilik melanjutkan ke Fase 02)
+- Fase 02: token desain, font, 7 komponen dasar, halaman pratinjau
 
 ## Tugas belum selesai
 - Pemilik menjalankan `npm install`, `npm run dev`, dan `npm run build`
-- Pemilik mengonfirmasi hasilnya
+- Pemilik mengecek halaman pratinjau di desktop dan mobile, lalu mengonfirmasi
 
 ## Kondisi implementasi
-Halaman sementara untuk verifikasi pondasi. Belum ada section website.
+`App.jsx` menampilkan `src/dev/DesignPreview.jsx` (halaman pratinjau). Belum ada section website.
 
 ## Masalah yang diketahui
-Belum diuji: lingkungan Claude tidak punya akses internet, jadi `npm install` dan build belum bisa dijalankan di sisi Claude.
+Belum diuji: lingkungan Claude tidak punya akses internet, jadi build belum bisa dijalankan di sisi Claude.
+Warna `fg-3` (#686868) kontrasnya rendah untuk teks kecil; hanya dipakai untuk elemen dekoratif.
 
 ## Aksi berikutnya
-Setelah dikonfirmasi: Fase 02 — Design System.
+Setelah dikonfirmasi: Fase 03 — Main Website (loading, navigation, hero, about, skills, projects, experience, journal, contact, footer).

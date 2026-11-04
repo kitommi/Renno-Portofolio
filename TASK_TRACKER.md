@@ -2,8 +2,8 @@
 
 | Fase | Nama | Prioritas | Status |
 |---|---|---|---|
-| 01 | Project Initialization | P0 | Menunggu verifikasi |
-| 02 | Design System | P0 | Belum dimulai |
+| 01 | Project Initialization | P0 | Selesai (pemilik melanjutkan ke Fase 02) |
+| 02 | Design System | P0 | Menunggu verifikasi |
 | 03 | Main Website | P0 | Belum dimulai |
 | 04 | Animation and Interaction | P1 | Belum dimulai |
 | 05 | Integration | P0 | Belum dimulai |
@@ -13,3 +13,4 @@
 
 ## Isu terbuka
 - Aset dan data dari pemilik belum lengkap (lihat PROJECT_CONTEXT.md)
+- Hasil `npm run build` dari sisi pemilik belum dilaporkan
