@@ -33,7 +33,7 @@ Panel "On GitHub" membaca API publik GitHub (`/users/kitommi` dan daftar repo) s
 
 ## Aset
 Letakkan gambar di `public/images/`:
-profile.jpg, sonicflows-preview.png, simmas-preview.png, flappybird-preview.png, greenvibe-preview.jpg.
+profile.webp (foto transparan, rasio 4:5), sonicflows-preview.png, simmas-preview.png, flappybird-preview.png, greenvibe-preview.jpg.
 
 ## Status
 Sedang dikembangkan. Lihat `PROJECT_STATUS.md`.

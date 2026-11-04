@@ -36,8 +36,8 @@ export const projects = [
     subtitle: null,
     description:
       'A simple Flappy Bird-style game: guide the bird through the gaps between pipes and keep the score climbing.',
-    // Teknologi, peran, status, dan repo: tambahkan setelah dikonfirmasi pemilik.
-    tech: [],
+    // Peran, status, dan repo: tambahkan setelah dikonfirmasi pemilik.
+    tech: ['HTML', 'CSS', 'JavaScript'],
     role: null,
     status: null,
     image: '/images/flappybird-preview.png',

@@ -16,7 +16,7 @@ export default function Journal() {
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {journalEntries.map((entry, index) => (
           <Reveal key={entry.id} delay={index * 0.1}>
-          <Card as="article" variant="raised" className="h-full">
+          <Card as="article" variant="raised" spotlight className="h-full">
             <div className="flex flex-wrap items-center gap-3">
               <Badge>{entry.tag}</Badge>
               {entry.date && <span className="text-caption text-fg-2">{entry.date}</span>}

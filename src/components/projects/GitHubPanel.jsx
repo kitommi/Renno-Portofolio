@@ -5,6 +5,7 @@ import useGitHub from '../../hooks/useGitHub'
 import Button from '../common/Button'
 import TextLink from '../common/TextLink'
 import Reveal from '../animations/Reveal'
+import CountUp from '../animations/CountUp'
 
 const dateFormat = new Intl.DateTimeFormat('en', { month: 'short', year: 'numeric' })
 
@@ -59,7 +60,11 @@ export default function GitHubPanel() {
         <div className="mt-8" aria-live="polite">
           <p className="text-caption tracking-wide text-fg-2 uppercase">Public repositories</p>
           {github.status === 'loading' && <Skeleton className="mt-3 h-14 w-24" />}
-          {success && <p className="mt-2 font-display text-heading">{github.profile.publicRepos}</p>}
+          {success && (
+            <p className="mt-2 font-display text-heading">
+              <CountUp value={github.profile.publicRepos} />
+            </p>
+          )}
           {github.status === 'error' && (
             <p className="mt-2 text-small text-fg-2">Unavailable</p>
           )}

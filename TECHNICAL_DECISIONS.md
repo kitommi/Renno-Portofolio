@@ -79,5 +79,21 @@ Halaman pratinjau Fase 02 sudah dihapus di Fase 03.
 - SEO: Open Graph, Twitter Card, canonical, `og-image.png`, `robots.txt`. URL absolut diisi lewat plugin kecil di `vite.config.js` (VITE_SITE_URL atau `VERCEL_PROJECT_PRODUCTION_URL`).
 - Kontras terukur: teks utama 18.4:1, teks sekunder 6.4:1 (bg) / 5.8:1 (surface); `fg-3` 3.6:1 hanya dipakai untuk huruf dekoratif besar.
 
+## Revisi setelah Fase 06 (permintaan pemilik)
+
+- Foto profil baru (PNG transparan) dipotong ke rasio 4:5 dan disimpan sebagai `public/images/profile.webp` (WebP dengan transparansi). Path berubah dari `profile.jpg` karena latar transparan dibutuhkan untuk efek kartu.
+- Kartu profil 3D (`ProfileCard` + `TiltCard`): miring mengikuti pointer, tiga lapisan kedalaman (huruf R di belakang, foto, label peran di depan), bagian bawah foto memudar ke latar. Tanpa garis tepi dan warna kartu = `bg` (sama dengan latar website). Reduced-motion: kartu datar.
+- Loading screen: "Are you ready?" (1,5 dtk) lalu "GO!" (1 dtk) lalu tirai terangkat. Ini sengaja berdurasi tetap atas permintaan pemilik (sebelumnya tanpa delay buatan), tetap menunggu halaman siap (maks. 3 dtk) dan ada tombol Skip. Reduced-motion: lebih singkat tanpa gerak.
+- Efek tambahan, terinspirasi dari portfolio referensi (EkiZR/Portofolio_V5). Isi kode referensi tidak bisa dibaca (GitHub memblokir akses otomatis ke folder src), jadi efek dipilih berdasarkan README-nya (animate-on-scroll, Framer Motion, modal detail proyek) dan dibuat ulang dengan kode sendiri, selaras gaya dark editorial:
+  - Marquee teknologi (pita berjalan, berhenti saat hover)
+  - Spotlight yang mengikuti mouse di kartu proyek dan jurnal
+  - Tombol magnetik di hero
+  - Garis progres scroll di atas layar
+  - Angka jumlah repo GitHub naik dari 0 (CountUp)
+  - Lightbox screenshot proyek (`<dialog>` bawaan browser)
+- Semua efek mengikuti reduced-motion. Efek yang sebelumnya dihindari di spesifikasi (3D, gerak ekstra) kini dipakai atas persetujuan pemilik.
+- Token baru `text-countdown` dan `text-watermark`. Catatan: `text-[clamp(...)]` arbitrer tidak dibaca Tailwind v4, selalu pakai token tema.
+- Flappy Bird: teknologi HTML, CSS, JavaScript ditampilkan.
+
 ## Koreksi
 Percobaan awal memakai Next.js + TypeScript karena prompt terpotong. Dibatalkan; Fase 01 diulang dengan React + Vite.

@@ -29,6 +29,12 @@
   --text-hero--line-height: 0.95;
   --text-hero--letter-spacing: -0.03em;
 
+  --text-countdown: clamp(6rem, 26vw, 16rem);
+  --text-countdown--line-height: 1;
+
+  --text-watermark: clamp(14rem, 36vw, 26rem);
+  --text-watermark--line-height: 1;
+
   --text-heading: clamp(2.25rem, 6vw, 4.5rem);
   --text-heading--line-height: 1;
   --text-heading--letter-spacing: -0.025em;
@@ -57,14 +63,23 @@
 
   /* Motion */
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-  --animate-loader: loader 1.2s ease-in-out infinite;
+  --animate-marquee: marquee 45s linear infinite;
+  --animate-pop: pop 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 
-  @keyframes loader {
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes pop {
     from {
-      transform: translateX(-100%);
+      opacity: 0;
+      transform: scale(0.96);
     }
     to {
-      transform: translateX(200%);
+      opacity: 1;
+      transform: scale(1);
     }
   }
 }

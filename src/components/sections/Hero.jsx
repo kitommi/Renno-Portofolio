@@ -4,13 +4,13 @@ import { roles, site } from '../../lib/site'
 import Container from '../common/Container'
 import Badge from '../common/Badge'
 import Button from '../common/Button'
-import FallbackImage from '../common/FallbackImage'
-import ImagePlaceholder from '../common/ImagePlaceholder'
 import RotatingText from '../animations/RotatingText'
+import Magnetic from '../animations/Magnetic'
+import ProfileCard from './ProfileCard'
 
 const ease = [0.16, 1, 0.3, 1]
 
-// `ready` = loading screen selesai. Urutan masuk: teks naik satu per satu, foto menyusul.
+// `ready` = animasi pembuka selesai. Urutan masuk: teks naik satu per satu, kartu foto menyusul.
 export default function Hero({ ready }) {
   const reduceMotion = useReducedMotion()
 
@@ -29,11 +29,11 @@ export default function Hero({ ready }) {
         hidden: { opacity: 0, y: 28 },
         show: { opacity: 1, y: 0, transition: { duration: 0.9, ease } },
       }
-  const photo = reduceMotion
+  const card = reduceMotion
     ? { hidden: { opacity: 1 }, show: { opacity: 1 } }
     : {
-        hidden: { opacity: 0, scale: 0.96 },
-        show: { opacity: 1, scale: 1, transition: { duration: 1.1, ease, delay: 0.2 } },
+        hidden: { opacity: 0, scale: 0.94, y: 24 },
+        show: { opacity: 1, scale: 1, y: 0, transition: { duration: 1.1, ease, delay: 0.2 } },
       }
 
   return (
@@ -71,30 +71,23 @@ export default function Hero({ ready }) {
             </motion.p>
 
             <motion.div variants={rise} className="mt-10 flex flex-wrap gap-3">
-              <Button href="#contact" size="lg">
-                <Mail size={18} aria-hidden="true" />
-                Get in Touch
-              </Button>
-              <Button href="#projects" variant="secondary" size="lg">
-                Explore My Work
-                <ArrowDown size={18} aria-hidden="true" />
-              </Button>
+              <Magnetic>
+                <Button href="#contact" size="lg">
+                  <Mail size={18} aria-hidden="true" />
+                  Get in Touch
+                </Button>
+              </Magnetic>
+              <Magnetic>
+                <Button href="#projects" variant="secondary" size="lg">
+                  Explore My Work
+                  <ArrowDown size={18} aria-hidden="true" />
+                </Button>
+              </Magnetic>
             </motion.div>
           </div>
 
-          <motion.div variants={photo} className="lg:col-span-5">
-            <div className="group mx-auto w-full max-w-sm overflow-hidden rounded-xl border border-line bg-bg-2 lg:max-w-none">
-              <div className="aspect-[4/5]">
-                <FallbackImage
-                  src="/images/profile.jpg"
-                  alt={`Portrait of ${site.name}`}
-                  fetchPriority="high"
-                  loading="eager"
-                  className="size-full object-cover transition-transform duration-700 ease-out-expo group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
-                  fallback={<ImagePlaceholder mark="R" label="Profile photo coming soon" />}
-                />
-              </div>
-            </div>
+          <motion.div variants={card} className="lg:col-span-5">
+            <ProfileCard />
           </motion.div>
         </motion.div>
       </Container>
