@@ -62,5 +62,22 @@ Halaman pratinjau Fase 02 sudah dihapus di Fase 03.
 - Smooth scrolling lewat CSS `scroll-behavior` (dimatikan untuk reduced-motion).
 - Tidak ada library animasi tambahan, tanpa custom cursor, parallax, atau partikel.
 
+## Fase 05 — Integration
+
+- GitHub: hook `useGitHub` mengambil `/users/kitommi` dan `/users/kitommi/repos` (2 request, dibatalkan jika komponen hilang), cache `sessionStorage` 10 menit. Mendeteksi rate limit (403/429 dengan `x-ratelimit-remaining: 0`). Jumlah repo dibaca dari API dan diberi label PUBLIC REPOSITORIES; tidak ada angka hardcode. Nama tampilan dari profil GitHub tidak dipakai; nama resmi tetap Muhammad Renno Agustovano.
+- Repo yang ditampilkan dipilih lewat daftar `githubRepos` di `src/lib/site.js` (Sonic_Flow, Project-SIMMAS), bukan semua repo.
+- Panel GitHub ada di bawah daftar proyek (`components/projects/GitHubPanel.jsx`) dengan skeleton loading, pesan error, dan fallback link ke profil.
+- Form kontak: jika `VITE_FORMSPREE_ENDPOINT` diisi, kirim lewat Formspree. Jika belum, tombol menjadi "Open in email app" dan membuka `mailto:` dengan pesan terisi; pemberitahuan di form menjelaskan hal ini.
+- Perubahan daftar proyek atas permintaan pemilik: FitCal dan Financial Management System dihapus; Flappy Bird ditambahkan; screenshot GreenVibe dipasang. Grid proyek: SonicFlows penuh, SIMMAS kiri, proyek compact bertumpuk di kolom kanan. Field kosong (tech, role, status) tidak ditampilkan.
+- Screenshot GreenVibe disimpan sebagai JPG (`greenvibe-preview.jpg`) karena versi PNG hampir 2 MB.
+- Jurnal: tiga entri, semuanya berdasarkan fakta tentang proyek/portfolio ini.
+
+## Fase 06 — Quality Assurance
+
+- Pengujian dilakukan di lingkungan Claude dengan: esbuild (sintaks JSX dan resolusi import), compiler Tailwind v4 (semua token dan class), dan Chromium headless (render nyata dengan stub untuk framer-motion dan lucide-react, GitHub API dipalsukan). Build Vite asli tetap harus dijalankan pemilik.
+- Perbaikan dari QA: link footer bentrok class (`underline` vs `no-underline`) diganti link biasa; kartu proyek compact dirapatkan agar kolom kanan seimbang dengan SIMMAS; grid jurnal 3 kolom di layar besar.
+- SEO: Open Graph, Twitter Card, canonical, `og-image.png`, `robots.txt`. URL absolut diisi lewat plugin kecil di `vite.config.js` (VITE_SITE_URL atau `VERCEL_PROJECT_PRODUCTION_URL`).
+- Kontras terukur: teks utama 18.4:1, teks sekunder 6.4:1 (bg) / 5.8:1 (surface); `fg-3` 3.6:1 hanya dipakai untuk huruf dekoratif besar.
+
 ## Koreksi
 Percobaan awal memakai Next.js + TypeScript karena prompt terpotong. Dibatalkan; Fase 01 diulang dengan React + Vite.

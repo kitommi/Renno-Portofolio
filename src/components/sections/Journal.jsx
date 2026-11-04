@@ -13,7 +13,7 @@ export default function Journal() {
         title="Mini journal"
         description="Short notes on what I am building and learning."
       />
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {journalEntries.map((entry, index) => (
           <Reveal key={entry.id} delay={index * 0.1}>
           <Card as="article" variant="raised" className="h-full">

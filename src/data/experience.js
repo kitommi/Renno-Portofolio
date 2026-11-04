@@ -13,15 +13,9 @@ export const experience = [
       'Building a Flutter application on Supabase to support coordination between students, teachers, and schools.',
   },
   {
-    role: 'Developer',
-    context: 'Financial Management System',
-    description:
-      'A native PHP system that explores backend development and data management.',
-  },
-  {
     role: 'Creator',
-    context: 'FitCal and GreenVibe',
+    context: 'GreenVibe',
     description:
-      'Two HTML and CSS prototypes for practicing basic web interface development.',
+      'A reforestation-themed web prototype, built as practice in basic web interface development.',
   },
 ]

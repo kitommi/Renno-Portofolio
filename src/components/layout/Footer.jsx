@@ -2,7 +2,6 @@ import { ArrowUp, Github } from 'lucide-react'
 import { navLinks, site } from '../../lib/site'
 import Container from '../common/Container'
 import Button from '../common/Button'
-import TextLink from '../common/TextLink'
 
 export default function Footer() {
   return (
@@ -15,12 +14,15 @@ export default function Footer() {
           </div>
 
           <nav aria-label="Footer" className="md:col-span-4">
-            <ul className="grid grid-cols-2 gap-x-6 gap-y-2 text-small">
+            <ul className="grid grid-cols-2 gap-x-6 text-small">
               {navLinks.map((link) => (
                 <li key={link.id}>
-                  <TextLink href={`#${link.id}`} className="no-underline hover:underline">
+                  <a
+                    href={`#${link.id}`}
+                    className="inline-block py-2 text-fg-2 transition-colors duration-300 hover:text-fg motion-reduce:transition-none"
+                  >
                     {link.label}
-                  </TextLink>
+                  </a>
                 </li>
               ))}
             </ul>

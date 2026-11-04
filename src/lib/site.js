@@ -10,6 +10,8 @@ export const site = {
   status: 'Open to internship opportunities',
   github: 'https://github.com/kitommi',
   githubUsername: 'kitommi',
+  // Repo yang ditampilkan di panel GitHub (nama persis seperti di GitHub).
+  githubRepos: ['Sonic_Flow', 'Project-SIMMAS'],
   email: 'handyprabowo8976@gmail.com',
   whatsapp: '6282131960823', // format internasional tanpa +
   whatsappLabel: '+62 821-3196-0823',

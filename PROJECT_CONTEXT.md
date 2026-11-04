@@ -27,12 +27,13 @@ Loading, Navigation, Hero, About, Skills, Projects, Experience, Journal, Contact
 - Database/layanan: MySQL, Supabase
 - Tools: VS Code, Git, GitHub, Laragon, Vercel
 
-## Proyek
-1. SonicFlows (unggulan): HTML, CSS, JavaScript, Supabase. Peran: pencetus ide, ketua tim, pengembang konsep fitur, programmer. Status: masih dikembangkan, sedang tidak aktif. Repo: menunggu dari pemilik.
-2. SIMMAS (Sistem Informasi Manajemen Magang Siswa): Dart, Flutter, Supabase. Repo: https://github.com/kitommi/Project-SIMMAS. Peran: developer. Status: dalam pengembangan. Fitur harus dicek dari isi repo.
-3. FitCal: HTML, CSS. Prototype. Peran: pembuat.
-4. GreenVibe: HTML, CSS. Prototype. Peran: pembuat.
-5. Financial Management System: PHP native, MySQL (perlu verifikasi repo). Peran: developer. Status: konfirmasi ke pemilik.
+## Proyek (tampil di website)
+1. SonicFlows (unggulan): HTML, CSS, JavaScript, Supabase. Peran: pencetus ide, ketua tim, pengembang konsep fitur, programmer. Status: masih dikembangkan, sedang tidak aktif. Repo: https://github.com/kitommi/Sonic_Flow
+2. SIMMAS (Sistem Informasi Manajemen Magang Siswa): Dart, Flutter, Supabase. Repo: https://github.com/kitommi/Project-SIMMAS. Peran: developer. Status: dalam pengembangan.
+3. Flappy Bird: game sederhana. Teknologi, peran, status, repo: belum dikonfirmasi (tidak ditampilkan).
+4. GreenVibe: HTML, CSS. Prototype bertema penghijauan. Peran: pembuat.
+
+Dihapus dari website atas permintaan pemilik (tidak ada screenshot): FitCal, Financial Management System.
 
 ## Aturan penting
 - Jangan mengarang bio, pengalaman, sertifikat, statistik, fitur proyek.
@@ -40,4 +41,4 @@ Loading, Navigation, Hero, About, Skills, Projects, Experience, Journal, Contact
 - Jumlah repo GitHub tidak boleh di-hardcode.
 
 ## Menunggu dari pemilik
-Foto profil, email, WhatsApp, link sosial media, URL repo SonicFlows, screenshot tambahan, kredensial Formspree/EmailJS.
+Detail Flappy Bird (teknologi, peran, status, repo), link sosial media (opsional), endpoint Formspree/EmailJS.

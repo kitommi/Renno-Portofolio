@@ -9,9 +9,9 @@ import ImagePlaceholder from '../common/ImagePlaceholder'
 // Screenshot selalu di atas (rasio 2:1, cocok dengan screenshot desktop).
 // Hierarki: featured = judul besar + teks dua kolom; lainnya = satu kolom.
 export default function ProjectCard({ project }) {
-  const { layout, title, subtitle, description, tech, role, status, image, repo, repoPending } =
-    project
+  const { layout, title, subtitle, description, tech, role, status, image, repo } = project
   const featured = layout === 'featured'
+  const compact = layout === 'compact'
 
   const intro = (
     <>
@@ -26,32 +26,33 @@ export default function ProjectCard({ project }) {
         </h3>
         {subtitle && <p className="mt-1 text-small text-fg-2">{subtitle}</p>}
       </div>
-      <p className="text-body text-fg-2">{description}</p>
+      <p className={compact ? 'text-small text-fg-2' : 'text-body text-fg-2'}>{description}</p>
     </>
   )
 
   const details = (
     <>
-      <p className="text-small text-fg-2">
-        <span className="text-fg">Role:</span> {role}
-      </p>
-      <ul className="flex flex-wrap gap-2">
-        {tech.map((item) => (
-          <li key={item}>
-            <Badge>{item}</Badge>
-          </li>
-        ))}
-      </ul>
+      {role && (
+        <p className="text-small text-fg-2">
+          <span className="text-fg">Role:</span> {role}
+        </p>
+      )}
+      {tech.length > 0 && (
+        <ul className="flex flex-wrap gap-2">
+          {tech.map((item) => (
+            <li key={item}>
+              <Badge>{item}</Badge>
+            </li>
+          ))}
+        </ul>
+      )}
       {repo && (
-        <div>
+        <div className="mt-auto">
           <Button href={repo} variant="secondary">
             <Github size={16} aria-hidden="true" />
             View repository
           </Button>
         </div>
-      )}
-      {!repo && repoPending && (
-        <p className="text-caption text-fg-2">Repository link coming soon.</p>
       )}
     </>
   )
@@ -74,8 +75,9 @@ export default function ProjectCard({ project }) {
 
       <div
         className={cn(
-          'flex-1 p-6 sm:p-8',
-          featured ? 'grid gap-8 lg:grid-cols-12' : 'flex flex-col gap-5',
+          'flex-1',
+          compact ? 'p-5' : 'p-6 sm:p-8',
+          featured ? 'grid gap-8 lg:grid-cols-12' : cn('flex flex-col', compact ? 'gap-4' : 'gap-5'),
         )}
       >
         {featured ? (

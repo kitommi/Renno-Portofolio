@@ -1,13 +1,11 @@
 // Data proyek. Ganti `image` / `repo` di sini saat aset atau link sudah ada.
-// `span` = lebar kartu pada grid 6 kolom (desktop).
-// `repo: null` + `repoPending: true` = menunggu URL repo dari pemilik.
-// `status: null` = status belum dikonfirmasi, tidak ditampilkan.
+// `layout`: featured (penuh), secondary (kiri, lebih besar), compact (kolom kanan, bertumpuk).
+// Nilai kosong (`null`, `[]`) = belum dikonfirmasi pemilik, bagian itu tidak ditampilkan.
 
 export const projects = [
   {
     id: 'sonicflows',
     layout: 'featured',
-    span: 'md:col-span-6',
     title: 'SonicFlows',
     subtitle: null,
     description:
@@ -17,12 +15,10 @@ export const projects = [
     status: 'Under development, currently inactive',
     image: '/images/sonicflows-preview.png',
     repo: 'https://github.com/kitommi/Sonic_Flow',
-    repoPending: false,
   },
   {
     id: 'simmas',
     layout: 'secondary',
-    span: 'md:col-span-4',
     title: 'SIMMAS',
     subtitle: 'Sistem Informasi Manajemen Magang Siswa',
     description:
@@ -32,52 +28,32 @@ export const projects = [
     status: 'In development',
     image: '/images/simmas-preview.png',
     repo: 'https://github.com/kitommi/Project-SIMMAS',
-    repoPending: false,
   },
   {
-    id: 'fitcal',
+    id: 'flappybird',
     layout: 'compact',
-    span: 'md:col-span-2',
-    title: 'FitCal',
+    title: 'Flappy Bird',
     subtitle: null,
     description:
-      'A prototype exploring a calorie-related digital application and basic web interface development.',
-    tech: ['HTML', 'CSS'],
-    role: 'Creator',
-    status: 'Prototype',
-    image: '/images/fitcal-preview.png',
+      'A simple Flappy Bird-style game: guide the bird through the gaps between pipes and keep the score climbing.',
+    // Teknologi, peran, status, dan repo: tambahkan setelah dikonfirmasi pemilik.
+    tech: [],
+    role: null,
+    status: null,
+    image: '/images/flappybird-preview.png',
     repo: null,
-    repoPending: false,
   },
   {
     id: 'greenvibe',
     layout: 'compact',
-    span: 'md:col-span-3',
     title: 'GreenVibe',
     subtitle: null,
     description:
-      'A prototype web project exploring a green-oriented digital concept and interface development.',
+      'A prototype web project with a reforestation (penghijauan) theme, exploring interface development.',
     tech: ['HTML', 'CSS'],
     role: 'Creator',
     status: 'Prototype',
-    image: '/images/greenvibe-preview.png',
+    image: '/images/greenvibe-preview.jpg',
     repo: null,
-    repoPending: false,
-  },
-  {
-    id: 'finance',
-    layout: 'compact',
-    span: 'md:col-span-3',
-    title: 'Financial Management System',
-    subtitle: null,
-    description:
-      'A native PHP financial management system demonstrating backend development and data management.',
-    // MySQL: tambahkan setelah diverifikasi dari repo.
-    tech: ['PHP'],
-    role: 'Developer',
-    status: null,
-    image: '/images/finance-preview.png',
-    repo: null,
-    repoPending: false,
   },
 ]

@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import { AlertCircle, CheckCircle2, Loader2, Send } from 'lucide-react'
 import { cn } from '../../lib/cn'
+import { site } from '../../lib/site'
 import Button from '../common/Button'
 
-// Formulir hanya aktif jika VITE_FORMSPREE_ENDPOINT diisi (lihat .env.example).
+// Jika VITE_FORMSPREE_ENDPOINT diisi (lihat .env.example), pesan dikirim lewat Formspree.
+// Jika belum, formulir membuka aplikasi email pengunjung dengan pesan yang sudah terisi.
 const ENDPOINT = import.meta.env.VITE_FORMSPREE_ENDPOINT
 const initialValues = { name: '', email: '', message: '' }
 
@@ -43,17 +45,18 @@ export default function ContactForm() {
   const [errors, setErrors] = useState({})
   const [status, setStatus] = useState('idle') // idle | loading | success | error
   const connected = Boolean(ENDPOINT)
+  const canSubmit = connected || Boolean(site.email)
 
   function handleChange(event) {
     const { name, value } = event.target
     setValues((current) => ({ ...current, [name]: value }))
     if (errors[name]) setErrors((current) => ({ ...current, [name]: undefined }))
-    if (status === 'success' || status === 'error') setStatus('idle')
+    if (status !== 'idle' && status !== 'loading') setStatus('idle')
   }
 
   async function handleSubmit(event) {
     event.preventDefault()
-    if (!connected || status === 'loading') return
+    if (!canSubmit || status === 'loading') return
 
     const form = event.currentTarget
     if (form.elements._gotcha.value) return // jebakan spam: bot mengisi kolom tersembunyi
@@ -63,6 +66,16 @@ export default function ContactForm() {
     const firstInvalid = Object.keys(found)[0]
     if (firstInvalid) {
       form.elements[firstInvalid].focus()
+      return
+    }
+
+    if (!connected) {
+      const subject = encodeURIComponent(`Portfolio message from ${values.name.trim()}`)
+      const body = encodeURIComponent(
+        `Name: ${values.name.trim()}\nEmail: ${values.email.trim()}\n\n${values.message.trim()}`,
+      )
+      window.location.href = `mailto:${site.email}?subject=${subject}&body=${body}`
+      setStatus('mailto')
       return
     }
 
@@ -85,7 +98,8 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} noValidate className="space-y-6">
       {!connected && (
         <p className="rounded-lg border border-line bg-bg-2 p-4 text-small text-fg-2">
-          The contact form is not connected yet. For now, please email or message me directly.
+          Direct sending is not set up yet. This form opens your email app with your message
+          ready to send.
         </p>
       )}
 
@@ -137,7 +151,7 @@ export default function ContactForm() {
       </div>
 
       <div className="flex flex-wrap items-center gap-4">
-        <Button type="submit" disabled={!connected || status === 'loading'}>
+        <Button type="submit" disabled={!canSubmit || status === 'loading'}>
           {status === 'loading' ? (
             <>
               <Loader2 size={16} className="animate-spin motion-reduce:animate-none" aria-hidden="true" />
@@ -146,7 +160,7 @@ export default function ContactForm() {
           ) : (
             <>
               <Send size={16} aria-hidden="true" />
-              Send message
+              {connected ? 'Send message' : 'Open in email app'}
             </>
           )}
         </Button>
@@ -155,6 +169,12 @@ export default function ContactForm() {
           <p role="status" className="flex items-center gap-2 text-small">
             <CheckCircle2 size={16} aria-hidden="true" />
             Thanks! Your message was sent.
+          </p>
+        )}
+        {status === 'mailto' && (
+          <p role="status" className="flex items-center gap-2 text-small">
+            <CheckCircle2 size={16} aria-hidden="true" />
+            Your email app should open now. If not, email {site.email} directly.
           </p>
         )}
         {status === 'error' && (

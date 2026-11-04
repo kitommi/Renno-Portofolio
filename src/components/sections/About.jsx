@@ -24,10 +24,9 @@ export default function About() {
             and use.
           </p>
           <p className="text-fg-2">
-            My projects so far range from small HTML and CSS prototypes to a Flutter app
-            connected to Supabase and a financial system written in native PHP. Working
-            across them keeps me curious about how the different pieces of a product fit
-            together.
+            My projects so far range from a reforestation-themed web prototype and a simple
+            Flappy Bird-style game to a Flutter app connected to Supabase. Working across
+            them keeps me curious about how the different pieces of a product fit together.
           </p>
           <p className="text-fg-2">
             I like building with other people, too. I came up with the idea for SonicFlows and
