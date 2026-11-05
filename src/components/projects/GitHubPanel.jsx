@@ -7,11 +7,11 @@ import TextLink from '../common/TextLink'
 import Reveal from '../animations/Reveal'
 import CountUp from '../animations/CountUp'
 
-const dateFormat = new Intl.DateTimeFormat('en', { month: 'short', year: 'numeric' })
+const dateFormat = new Intl.DateTimeFormat('id-ID', { month: 'short', year: 'numeric' })
 
 const errorMessages = {
-  'rate-limit': 'GitHub’s request limit has been reached for now. Please try again in a little while.',
-  error: 'GitHub data could not be loaded right now.',
+  'rate-limit': 'Batas permintaan GitHub sedang tercapai. Coba lagi beberapa saat lagi.',
+  error: 'Data GitHub tidak bisa dimuat saat ini.',
 }
 
 function Skeleton({ className }) {
@@ -27,7 +27,7 @@ function ProfileLink() {
   return (
     <Button href={site.github} variant="secondary">
       <Github size={16} aria-hidden="true" />
-      Open GitHub profile
+      Buka profil GitHub
     </Button>
   )
 }
@@ -51,14 +51,16 @@ export default function GitHubPanel() {
     >
       <div className="md:col-span-4">
         <h3 id="github-title" className="text-title font-medium">
-          On GitHub
+          Di GitHub
         </h3>
         <p className="mt-1 text-small text-fg-2">
           <TextLink href={site.github}>@{site.githubUsername}</TextLink>
         </p>
 
         <div className="mt-8" aria-live="polite">
-          <p className="text-caption tracking-wide text-fg-2 uppercase">Public repositories</p>
+          <p lang="en" className="text-caption tracking-wide text-fg-2 uppercase">
+            Public repositories
+          </p>
           {github.status === 'loading' && <Skeleton className="mt-3 h-14 w-24" />}
           {success && (
             <p className="mt-2 font-display text-heading">
@@ -66,7 +68,7 @@ export default function GitHubPanel() {
             </p>
           )}
           {github.status === 'error' && (
-            <p className="mt-2 text-small text-fg-2">Unavailable</p>
+            <p className="mt-2 text-small text-fg-2">Tidak tersedia</p>
           )}
         </div>
       </div>
@@ -102,7 +104,7 @@ export default function GitHubPanel() {
                       <span className="mt-1 block text-small text-fg-2">{repo.description}</span>
                     )}
                     <span className="mt-3 block text-caption text-fg-2">
-                      {[repo.language, `Updated ${dateFormat.format(new Date(repo.pushedAt))}`]
+                      {[repo.language, `Diperbarui ${dateFormat.format(new Date(repo.pushedAt))}`]
                         .filter(Boolean)
                         .join(' · ')}
                     </span>
@@ -120,7 +122,7 @@ export default function GitHubPanel() {
 
         {success && repos.length === 0 && (
           <div className="space-y-5">
-            <p className="text-body text-fg-2">Browse all my public repositories on GitHub.</p>
+            <p className="text-body text-fg-2">Lihat semua repository publik saya di GitHub.</p>
             <ProfileLink />
           </div>
         )}

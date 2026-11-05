@@ -11,7 +11,7 @@ export default function Journal() {
       <SectionHeading
         id="journal-title"
         title="Mini journal"
-        description="Short notes on what I am building and learning."
+        description="Catatan singkat tentang apa yang sedang saya bangun dan pelajari."
       />
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {journalEntries.map((entry, index) => (

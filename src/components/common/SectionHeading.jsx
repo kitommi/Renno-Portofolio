@@ -12,7 +12,7 @@ export default function SectionHeading({ id, title, description, className }) {
         className,
       )}
     >
-      <h2 id={id} className="font-display text-heading md:col-span-7">
+      <h2 id={id} lang="en" className="font-display text-heading md:col-span-7">
         {title}
       </h2>
       {description && (

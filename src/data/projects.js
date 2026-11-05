@@ -9,10 +9,10 @@ export const projects = [
     title: 'SonicFlows',
     subtitle: null,
     description:
-      'A collaborative music-themed web platform designed to provide an engaging experience around music discovery and interactive features.',
+      'Platform web bertema musik yang dibuat bersama tim, dirancang untuk menghadirkan pengalaman seru seputar penemuan musik dan fitur interaktif.',
     tech: ['HTML', 'CSS', 'JavaScript', 'Supabase'],
-    role: 'Original idea initiator, team leader, feature concept developer, and programmer',
-    status: 'Under development, currently inactive',
+    role: 'Pencetus ide, ketua tim, pengembang konsep fitur, dan programmer',
+    status: 'Masih dikembangkan, saat ini tidak aktif',
     image: '/images/sonicflows-preview.png',
     repo: 'https://github.com/kitommi/Sonic_Flow',
   },
@@ -22,10 +22,10 @@ export const projects = [
     title: 'SIMMAS',
     subtitle: 'Sistem Informasi Manajemen Magang Siswa',
     description:
-      'A student internship management application designed to support coordination and monitoring between students, teachers, and schools.',
+      'Aplikasi manajemen magang siswa yang dirancang untuk membantu koordinasi dan pemantauan antara siswa, guru, dan sekolah.',
     tech: ['Dart', 'Flutter', 'Supabase'],
     role: 'Developer',
-    status: 'In development',
+    status: 'Dalam pengembangan',
     image: '/images/simmas-preview.png',
     repo: 'https://github.com/kitommi/Project-SIMMAS',
   },
@@ -35,7 +35,7 @@ export const projects = [
     title: 'Flappy Bird',
     subtitle: null,
     description:
-      'A simple Flappy Bird-style game: guide the bird through the gaps between pipes and keep the score climbing.',
+      'Game sederhana bergaya Flappy Bird: arahkan burung melewati celah di antara pipa dan jaga skor tetap naik.',
     // Peran, status, dan repo: tambahkan setelah dikonfirmasi pemilik.
     tech: ['HTML', 'CSS', 'JavaScript'],
     role: null,
@@ -49,9 +49,9 @@ export const projects = [
     title: 'GreenVibe',
     subtitle: null,
     description:
-      'A prototype web project with a reforestation (penghijauan) theme, exploring interface development.',
+      'Prototype proyek web bertema penghijauan, dibuat untuk menjelajahi pengembangan antarmuka.',
     tech: ['HTML', 'CSS'],
-    role: 'Creator',
+    role: 'Pembuat',
     status: 'Prototype',
     image: '/images/greenvibe-preview.jpg',
     repo: null,

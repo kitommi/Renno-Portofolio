@@ -27,7 +27,7 @@ export default function ProjectLightbox({ open, onClose, title, subtitle, image 
   return (
     <dialog
       ref={ref}
-      aria-label={`${title} screenshot`}
+      aria-label={`Screenshot ${title}`}
       onClose={onClose}
       onClick={(event) => {
         if (event.target === ref.current) onClose()
@@ -38,9 +38,9 @@ export default function ProjectLightbox({ open, onClose, title, subtitle, image 
         <div className="aspect-[2/1]">
           <FallbackImage
             src={image}
-            alt={`Screenshot of ${title}`}
+            alt={`Screenshot ${title}`}
             className="size-full object-cover object-top"
-            fallback={<ImagePlaceholder mark={title[0]} label="Screenshot coming soon" />}
+            fallback={<ImagePlaceholder mark={title[0]} label="Screenshot segera hadir" />}
           />
         </div>
       </div>
@@ -55,7 +55,7 @@ export default function ProjectLightbox({ open, onClose, title, subtitle, image 
           className="inline-flex h-11 items-center gap-2 rounded-full border border-line px-5 text-small transition-colors duration-300 hover:border-fg-3 hover:bg-surface"
         >
           <X size={16} aria-hidden="true" />
-          Close
+          Tutup
         </button>
       </div>
     </dialog>

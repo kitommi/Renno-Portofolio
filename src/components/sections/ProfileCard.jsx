@@ -22,7 +22,7 @@ export default function ProfileCard() {
         <div className="absolute inset-0" style={{ transform: 'translateZ(40px)' }}>
           <FallbackImage
             src="/images/profile.webp"
-            alt={`Portrait of ${site.name}`}
+            alt={`Foto potret ${site.name}`}
             fetchPriority="high"
             loading="eager"
             className="size-full object-contain object-bottom"
@@ -31,7 +31,7 @@ export default function ProfileCard() {
               WebkitMaskImage: fadeBottom,
               filter: 'drop-shadow(0 30px 40px rgb(0 0 0 / 0.55))',
             }}
-            fallback={<ImagePlaceholder mark="R" label="Profile photo coming soon" />}
+            fallback={<ImagePlaceholder mark="R" label="Foto profil segera hadir" />}
           />
         </div>
 

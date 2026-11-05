@@ -34,7 +34,7 @@ export default function Contact() {
       <SectionHeading
         id="contact-title"
         title="Get in touch"
-        description="I am open to internship opportunities and happy to talk about my projects."
+        description="Saya terbuka untuk kesempatan magang dan senang membahas proyek-proyek saya."
       />
       <div className="grid gap-12 lg:grid-cols-12">
         <ul className="space-y-6 lg:col-span-5">
@@ -53,7 +53,7 @@ export default function Contact() {
                     {value}
                   </TextLink>
                 ) : (
-                  <p className="text-body text-fg-2">To be added</p>
+                  <p className="text-body text-fg-2">Segera ditambahkan</p>
                 )}
               </div>
             </Reveal>

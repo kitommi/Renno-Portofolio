@@ -3,7 +3,7 @@
 **Terakhir diperbarui:** 4 November 2026
 
 ## Fase saat ini
-Fase 06 — Quality Assurance, revisi 1: foto baru, kartu 3D, loading "Are you ready? GO!", efek tambahan (menunggu verifikasi dari pemilik)
+Fase 06 — Quality Assurance, revisi 2: foto baru, kartu 3D, loading, efek tambahan, bahasa campuran Indonesia x Inggris (menunggu verifikasi dari pemilik)
 
 ## Tugas terakhir selesai
 Fase 05 (integrasi) dilanjutkan oleh pemilik. Fase 06: QA otomatis, perbaikan, SEO, gambar OG.

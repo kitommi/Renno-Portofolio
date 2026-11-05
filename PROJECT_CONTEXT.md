@@ -6,7 +6,7 @@
 - Brand: RENNO.DEV
 - Tagline: Fresh skills, solid effort.
 - Status: developer pemula, terbuka untuk magang (jangan ditulis senior/profesional)
-- Bahasa website: Inggris. Bahasa komunikasi dan dokumentasi: Indonesia.
+- Bahasa website: campuran Indonesia x Inggris (permintaan pemilik, 4 Nov 2026). Teks isi (hero, About, deskripsi, proyek, jurnal, form) bahasa Indonesia dengan sapaan "saya"/"Anda"; judul section, tombol utama, tagline, menu, dan istilah teknis tetap Inggris. Atribut `lang="en"` dipasang pada bagian berbahasa Inggris. Bahasa komunikasi dan dokumentasi: Indonesia.
 - Deadline: Rabu, 4 November 2026, malam
 - Deployment: Vercel
 

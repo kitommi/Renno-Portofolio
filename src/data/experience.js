@@ -1,21 +1,21 @@
 // Hanya pengalaman nyata dari proyek. Tanpa tanggal, pekerjaan, atau penghargaan karangan.
 export const experience = [
   {
-    role: 'Team leader and programmer',
+    role: 'Ketua tim & programmer',
     context: 'SonicFlows',
     description:
-      'Started the original idea, shaped feature concepts, and take part in the programming alongside the team. The project is still under development and currently inactive.',
+      'Mencetuskan ide awal, merancang konsep fitur, dan ikut memprogram bersama tim. Proyek ini masih dalam pengembangan dan saat ini tidak aktif.',
   },
   {
     role: 'Developer',
     context: 'SIMMAS',
     description:
-      'Building a Flutter application on Supabase to support coordination between students, teachers, and schools.',
+      'Membangun aplikasi Flutter dengan Supabase untuk membantu koordinasi antara siswa, guru, dan sekolah.',
   },
   {
-    role: 'Creator',
+    role: 'Pembuat',
     context: 'GreenVibe',
     description:
-      'A reforestation-themed web prototype, built as practice in basic web interface development.',
+      'Prototype web bertema penghijauan, dibuat sebagai latihan dasar pengembangan antarmuka web.',
   },
 ]

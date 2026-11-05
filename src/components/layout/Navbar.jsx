@@ -37,7 +37,7 @@ export default function Navbar() {
           {site.brand}
         </a>
 
-        <nav aria-label="Primary" className="hidden lg:block">
+        <nav aria-label="Navigasi utama" lang="en" className="hidden lg:block">
           <ul className="flex items-center gap-7">
             {navLinks.map((link) => {
               const isActive = active === link.id
@@ -72,7 +72,7 @@ export default function Navbar() {
           className="-mr-2 inline-flex size-11 items-center justify-center rounded-full text-fg lg:hidden"
           aria-expanded={open}
           aria-controls="mobile-menu"
-          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-label={open ? 'Tutup menu' : 'Buka menu'}
           onClick={() => setOpen((value) => !value)}
         >
           {open ? <X size={22} aria-hidden="true" /> : <Menu size={22} aria-hidden="true" />}
@@ -89,7 +89,7 @@ export default function Navbar() {
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: reduceMotion ? 0 : 0.3, ease: [0.16, 1, 0.3, 1] }}
           >
-            <Container as="nav" aria-label="Mobile" className="py-4">
+            <Container as="nav" aria-label="Navigasi mobile" lang="en" className="py-4">
               <ul>
                 {navLinks.map((link) => (
                   <li key={link.id}>

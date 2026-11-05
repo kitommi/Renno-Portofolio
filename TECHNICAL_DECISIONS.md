@@ -95,5 +95,12 @@ Halaman pratinjau Fase 02 sudah dihapus di Fase 03.
 - Token baru `text-countdown` dan `text-watermark`. Catatan: `text-[clamp(...)]` arbitrer tidak dibaca Tailwind v4, selalu pakai token tema.
 - Flappy Bird: teknologi HTML, CSS, JavaScript ditampilkan.
 
+## Bahasa website (revisi 2)
+
+- Keputusan awal "website berbahasa Inggris" diubah atas permintaan pemilik menjadi campuran Indonesia x Inggris.
+- Inggris: brand, tagline, nama menu, judul section (About, Skills & technologies, Selected work, Experience, Mini journal, Get in touch), tombol utama hero, status "Open to internship opportunities", teks rotasi peran, label "PUBLIC REPOSITORIES", loading "Are you ready? GO!", nama teknologi.
+- Indonesia: paragraf hero dan About, deskripsi section, deskripsi/peran/status proyek, pengalaman, jurnal, formulir kontak (label, error, status), panel GitHub, footer, label aksesibilitas.
+- `<html lang="id">`; bagian Inggris diberi `lang="en"`. Meta tag SEO/OG tetap Inggris (untuk pratinjau share internasional).
+
 ## Koreksi
 Percobaan awal memakai Next.js + TypeScript karena prompt terpotong. Dibatalkan; Fase 01 diulang dengan React + Vite.

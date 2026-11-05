@@ -34,6 +34,7 @@ export default function LoadingScreen({ ready, onDone }) {
     <motion.div
       role="status"
       aria-live="polite"
+      lang="en"
       initial={{ y: 0, opacity: 1 }}
       exit={reduceMotion ? { opacity: 0 } : { y: '-100%' }}
       transition={{ duration: reduceMotion ? 0 : 0.8, ease: [0.76, 0, 0.24, 1] }}

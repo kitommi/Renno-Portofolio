@@ -10,10 +10,10 @@ export default function Footer() {
         <div className="grid gap-10 md:grid-cols-12">
           <div className="md:col-span-5">
             <p className="font-display text-heading">{site.brand}</p>
-            <p className="mt-3 text-body text-fg-2">{site.tagline}</p>
+            <p lang="en" className="mt-3 text-body text-fg-2">{site.tagline}</p>
           </div>
 
-          <nav aria-label="Footer" className="md:col-span-4">
+          <nav aria-label="Navigasi footer" className="md:col-span-4">
             <ul className="grid grid-cols-2 gap-x-6 text-small">
               {navLinks.map((link) => (
                 <li key={link.id}>
@@ -34,14 +34,14 @@ export default function Footer() {
               GitHub
             </Button>
             <Button href="#home" variant="ghost">
-              Back to top
+              Kembali ke atas
               <ArrowUp size={16} aria-hidden="true" />
             </Button>
           </div>
         </div>
 
         <p className="mt-12 border-t border-line pt-6 text-caption text-fg-2">
-          © {new Date().getFullYear()} {site.name}. All rights reserved.
+          © {new Date().getFullYear()} {site.name}. Hak cipta dilindungi.
         </p>
       </Container>
     </footer>

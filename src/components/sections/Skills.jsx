@@ -10,7 +10,7 @@ export default function Skills() {
       <SectionHeading
         id="skills-title"
         title="Skills & technologies"
-        description="Technologies I have explored, used, or am still learning."
+        description="Teknologi yang pernah saya jelajahi, pakai, atau masih saya pelajari."
       />
       <div>
         {skillGroups.map((group) => (

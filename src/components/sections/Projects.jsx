@@ -15,7 +15,7 @@ export default function Projects() {
       <SectionHeading
         id="projects-title"
         title="Selected work"
-        description="Real projects at different stages. Some are prototypes, others are still being built."
+        description="Proyek nyata di berbagai tahap. Ada yang masih prototype, ada yang terus dikembangkan."
       />
 
       <div className="grid gap-6 md:grid-cols-6">

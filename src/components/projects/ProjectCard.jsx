@@ -37,7 +37,7 @@ export default function ProjectCard({ project }) {
     <>
       {role && (
         <p className="text-small text-fg-2">
-          <span className="text-fg">Role:</span> {role}
+          <span className="text-fg">Peran:</span> {role}
         </p>
       )}
       {tech.length > 0 && (
@@ -53,7 +53,7 @@ export default function ProjectCard({ project }) {
         <div className="mt-auto">
           <Button href={repo} variant="secondary">
             <Github size={16} aria-hidden="true" />
-            View repository
+            Lihat repository
           </Button>
         </div>
       )}
@@ -73,14 +73,14 @@ export default function ProjectCard({ project }) {
           <button
             type="button"
             onClick={() => setLightboxOpen(true)}
-            aria-label={`Enlarge ${title} screenshot`}
+            aria-label={`Perbesar screenshot ${title}`}
             className="block size-full cursor-zoom-in"
           >
             <FallbackImage
               src={image}
-              alt={`Screenshot of ${title}`}
+              alt={`Screenshot ${title}`}
               className="size-full object-cover object-top transition-transform duration-700 ease-out-expo group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
-              fallback={<ImagePlaceholder mark={title[0]} label="Screenshot coming soon" />}
+              fallback={<ImagePlaceholder mark={title[0]} label="Screenshot segera hadir" />}
             />
           </button>
           <span

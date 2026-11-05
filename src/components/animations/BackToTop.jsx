@@ -12,7 +12,7 @@ export default function BackToTop() {
       {visible && (
         <motion.button
           type="button"
-          aria-label="Back to top"
+          aria-label="Kembali ke atas"
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 12 }}

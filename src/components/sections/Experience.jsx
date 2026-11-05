@@ -9,7 +9,7 @@ export default function Experience() {
       <SectionHeading
         id="experience-title"
         title="Experience"
-        description="Hands-on work from the projects above, in the roles I actually held."
+        description="Pengalaman langsung dari proyek-proyek di atas, sesuai peran yang benar-benar saya jalani."
       />
       <ul>
         {experience.map((item) => (

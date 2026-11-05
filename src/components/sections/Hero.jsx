@@ -46,7 +46,7 @@ export default function Hero({ ready }) {
           animate={ready ? 'show' : 'hidden'}
         >
           <div className="lg:col-span-7">
-            <motion.div variants={rise}>
+            <motion.div variants={rise} lang="en">
               <Badge dot>{site.status}</Badge>
             </motion.div>
 
@@ -57,20 +57,20 @@ export default function Hero({ ready }) {
             >
               {site.name}
             </motion.h1>
-            <motion.p variants={rise} className="mt-4 font-display text-hero">
+            <motion.p variants={rise} lang="en" className="mt-4 font-display text-hero">
               {site.tagline}
             </motion.p>
 
-            <motion.div variants={rise} className="mt-8 text-lead text-fg-2">
+            <motion.div variants={rise} lang="en" className="mt-8 text-lead text-fg-2">
               <RotatingText items={roles} />
             </motion.div>
 
             <motion.p variants={rise} className="mt-6 max-w-lg text-body text-fg-2">
-              I build web and mobile projects and learn something new with every one. Take a
-              look at what I have made so far.
+              Saya membuat proyek web dan mobile sambil terus belajar hal baru di setiap
+              prosesnya. Silakan lihat apa saja yang sudah saya buat.
             </motion.p>
 
-            <motion.div variants={rise} className="mt-10 flex flex-wrap gap-3">
+            <motion.div variants={rise} lang="en" className="mt-10 flex flex-wrap gap-3">
               <Magnetic>
                 <Button href="#contact" size="lg">
                   <Mail size={18} aria-hidden="true" />

@@ -3,26 +3,26 @@
 export const journalEntries = [
   {
     id: 'live-github-data',
-    tag: 'Project update',
+    tag: 'Update proyek',
     date: 'November 2026',
-    title: 'Reading my repository count from GitHub',
+    title: 'Membaca jumlah repo langsung dari GitHub',
     summary:
-      'The number of public repositories on this page is fetched from GitHub when the page loads instead of being typed in by hand, so it stays accurate as I add projects. If GitHub is unreachable, the page says so instead of guessing.',
+      'Jumlah repository publik di halaman ini diambil dari GitHub setiap halaman dimuat, bukan diketik manual, jadi tetap akurat saat saya menambah proyek. Kalau GitHub tidak bisa dihubungi, halaman ini akan bilang apa adanya, bukan menebak-nebak.',
   },
   {
     id: 'building-portfolio',
-    tag: 'Project update',
+    tag: 'Update proyek',
     date: 'November 2026',
-    title: 'Building this portfolio with React',
+    title: 'Membangun portfolio ini dengan React',
     summary:
-      'I am new to React, so this site doubles as practice: Vite for the setup, Tailwind CSS for styling, Framer Motion for motion, and small reusable components instead of one long HTML file.',
+      'Saya masih baru di React, jadi website ini sekaligus jadi latihan: Vite untuk setup, Tailwind CSS untuk styling, Framer Motion untuk animasi, dan component kecil yang bisa dipakai ulang, bukan satu file HTML yang panjang.',
   },
   {
     id: 'one-idea-many-stacks',
-    tag: 'Learning note',
+    tag: 'Catatan belajar',
     date: null,
-    title: 'Same curiosity, different stacks',
+    title: 'Rasa penasaran yang sama, stack yang berbeda',
     summary:
-      'My projects so far include a web prototype, a simple game, a Supabase-backed platform, and a Flutter app. Switching between them is a good way to see which ideas carry over and which do not.',
+      'Proyek saya sejauh ini mencakup prototype web, game sederhana, platform berbasis Supabase, dan aplikasi Flutter. Berpindah-pindah di antara semuanya membantu saya melihat ide mana yang bisa dibawa ke mana-mana dan mana yang tidak.',
   },
 ]

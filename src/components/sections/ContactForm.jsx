@@ -11,9 +11,9 @@ const initialValues = { name: '', email: '', message: '' }
 
 function validate(values) {
   const errors = {}
-  if (!values.name.trim()) errors.name = 'Please enter your name.'
-  if (!/^\S+@\S+\.\S+$/.test(values.email.trim())) errors.email = 'Please enter a valid email address.'
-  if (values.message.trim().length < 10) errors.message = 'Please write at least 10 characters.'
+  if (!values.name.trim()) errors.name = 'Mohon isi nama Anda.'
+  if (!/^\S+@\S+\.\S+$/.test(values.email.trim())) errors.email = 'Mohon isi alamat email yang valid.'
+  if (values.message.trim().length < 10) errors.message = 'Mohon tulis pesan minimal 10 karakter.'
   return errors
 }
 
@@ -43,7 +43,7 @@ function Field({ id, label, error, children }) {
 export default function ContactForm() {
   const [values, setValues] = useState(initialValues)
   const [errors, setErrors] = useState({})
-  const [status, setStatus] = useState('idle') // idle | loading | success | error
+  const [status, setStatus] = useState('idle') // idle | loading | success | error | mailto
   const connected = Boolean(ENDPOINT)
   const canSubmit = connected || Boolean(site.email)
 
@@ -70,9 +70,9 @@ export default function ContactForm() {
     }
 
     if (!connected) {
-      const subject = encodeURIComponent(`Portfolio message from ${values.name.trim()}`)
+      const subject = encodeURIComponent(`Pesan dari portfolio: ${values.name.trim()}`)
       const body = encodeURIComponent(
-        `Name: ${values.name.trim()}\nEmail: ${values.email.trim()}\n\n${values.message.trim()}`,
+        `Nama: ${values.name.trim()}\nEmail: ${values.email.trim()}\n\n${values.message.trim()}`,
       )
       window.location.href = `mailto:${site.email}?subject=${subject}&body=${body}`
       setStatus('mailto')
@@ -98,12 +98,12 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} noValidate className="space-y-6">
       {!connected && (
         <p className="rounded-lg border border-line bg-bg-2 p-4 text-small text-fg-2">
-          Direct sending is not set up yet. This form opens your email app with your message
-          ready to send.
+          Pengiriman langsung belum diaktifkan. Formulir ini akan membuka aplikasi email Anda
+          dengan pesan yang sudah terisi.
         </p>
       )}
 
-      <Field id="contact-name" label="Name" error={errors.name}>
+      <Field id="contact-name" label="Nama" error={errors.name}>
         <input
           id="contact-name"
           name="name"
@@ -131,7 +131,7 @@ export default function ContactForm() {
         />
       </Field>
 
-      <Field id="contact-message" label="Message" error={errors.message}>
+      <Field id="contact-message" label="Pesan" error={errors.message}>
         <textarea
           id="contact-message"
           name="message"
@@ -146,7 +146,7 @@ export default function ContactForm() {
 
       {/* Kolom jebakan spam: tersembunyi dari pengguna dan pembaca layar. */}
       <div className="absolute -left-[9999px]" aria-hidden="true">
-        <label htmlFor="contact-gotcha">Leave this field empty</label>
+        <label htmlFor="contact-gotcha">Kosongkan kolom ini</label>
         <input id="contact-gotcha" name="_gotcha" type="text" tabIndex={-1} autoComplete="off" />
       </div>
 
@@ -155,12 +155,12 @@ export default function ContactForm() {
           {status === 'loading' ? (
             <>
               <Loader2 size={16} className="animate-spin motion-reduce:animate-none" aria-hidden="true" />
-              Sending...
+              Mengirim...
             </>
           ) : (
             <>
               <Send size={16} aria-hidden="true" />
-              {connected ? 'Send message' : 'Open in email app'}
+              {connected ? 'Kirim pesan' : 'Buka di aplikasi email'}
             </>
           )}
         </Button>
@@ -168,19 +168,19 @@ export default function ContactForm() {
         {status === 'success' && (
           <p role="status" className="flex items-center gap-2 text-small">
             <CheckCircle2 size={16} aria-hidden="true" />
-            Thanks! Your message was sent.
+            Terima kasih! Pesan Anda sudah terkirim.
           </p>
         )}
         {status === 'mailto' && (
           <p role="status" className="flex items-center gap-2 text-small">
             <CheckCircle2 size={16} aria-hidden="true" />
-            Your email app should open now. If not, email {site.email} directly.
+            Aplikasi email Anda akan terbuka. Jika tidak, kirim email langsung ke {site.email}.
           </p>
         )}
         {status === 'error' && (
           <p role="alert" className="flex items-center gap-2 text-small">
             <AlertCircle size={16} aria-hidden="true" />
-            Something went wrong. Please try again or email me directly.
+            Terjadi kesalahan. Coba lagi atau kirim email langsung.
           </p>
         )}
       </div>
